@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Introduction to Azure Functions</section>
+				<section>
+					<section>
+						<h3>What are Azure Functions?</h3>
+						<p>Code snippets that are executed on a timer or an event that perform a specific action and then terminate.</p>
+						▼
+					</section>
+					<section>
+						<img class="azure-fn-sample-pic" src="https://azurecomcdn.azureedge.net/cvt-2d0e93078d2d2a5dc7648743dd7f09032bd73f53a791ae29fd075b2c41902a2b/images/page/services/functions/scenarios/01-timer-scenario.png" />
+					</section>
+					<section>
+						<img class="azure-fn-sample-pic" src="https://azurecomcdn.azureedge.net/cvt-52f32b4cbf22f7ea1405faab6f091395a778e2da58b18f5d340dc8fd7425fbeb/images/page/services/functions/scenarios/03-saasevent-scenario.png" />
+					</section>
+					<section>
+						<img class="azure-fn-sample-pic" src="https://azurecomcdn.azureedge.net/cvt-c6dd820a67f633fc244687e4fead93eb12f1c83c6cf6839179488eb059c5afd3/images/page/services/functions/scenarios/07-realtimebot-scenario.png" />
+					</section>
+				</section>
+				<section>
+					<h3>Why Functions?</h3>
+					<ul>
+						<li>Rapid prototyping</li>
+						<li>Decrease costs</li>
+						<li>Don't need to worry about underlying server architecture</li>
+						<li>Isolate app modules</li>
+						<li>Code in Node and use the resources of the node ecosystem!</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Local Development Strategy</h3>
+					<ul>
+						<li><a href="https://www.npmjs.com/package/azure-functions-cli">Azure Functions Client*</a> - simulates behavior in production</li>
+						<code>npm i -g azure-functions-cli</code>
+						<li>Don't need authentication (code query parameter)</li>
+						<li>Use <code>func host start</code> to start functions server</li>
+						<li>Easily set "environemntal variables" in a json file</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Online editor</h3>
+					<ul>
+						<li>Better for beginner programmers. Experienced developers prefer their own environments</li>
+						<li>Get the URL and code, go to Postman!</li>
+					</ul>
+				</section>
+				<section>
+					<h5>Cost as of 3/14/2017</h5>
+					<table <tr> <th>Meter</th> <th>Price</th> <th>Free Grant (Per Month)</th> </tr> </thead> <tbody> <tr> <td>Execution Time*</td> <td> <span class="price-data " data-amount="{&quot;regional&quot;:{&quot;asia-pacific-east&quot;:0.000016,&quot;asia-pacific-southeast&quot;:0.000016,&quot;australia-east&quot;:0.000016,&quot;australia-southeast&quot;:0.000016,&quot;brazil-south&quot;:0.000016,&quot;canada-central&quot;:0.000016,&quot;europe-north&quot;:0.000016,&quot;europe-west&quot;:0.000016,&quot;japan-east&quot;:0.000016,&quot;japan-west&quot;:0.000016,&quot;south-india&quot;:0.000016,&quot;united-kingdom-south&quot;:0.000016,&quot;us-central&quot;:0.000016,&quot;us-east-2&quot;:0.000016,&quot;us-north-central&quot;:0.000016,&quot;us-south-central&quot;:0.000016,&quot;us-west&quot;:0.000016,&quot;us-west-2&quot;:0.000016}}" data-decimals="6" data-region-unavailable="N/A" data-has-valid-price="true">$0.000016</span>/GB-s </td> <td>400,000 GB-s</td> </tr> <tr> <td>Total Executions*</td> <td> <span class="price-data " data-amount="{&quot;regional&quot;:{&quot;asia-pacific-east&quot;:0.2,&quot;asia-pacific-southeast&quot;:0.2,&quot;australia-east&quot;:0.2,&quot;australia-southeast&quot;:0.2,&quot;brazil-south&quot;:0.2,&quot;canada-central&quot;:0.2,&quot;europe-north&quot;:0.2,&quot;europe-west&quot;:0.2,&quot;japan-east&quot;:0.2,&quot;japan-west&quot;:0.2,&quot;south-india&quot;:0.2,&quot;united-kingdom-south&quot;:0.2,&quot;us-central&quot;:0.2,&quot;us-east-2&quot;:0.2,&quot;us-north-central&quot;:0.2,&quot;us-south-central&quot;:0.2,&quot;us-west&quot;:0.2,&quot;us-west-2&quot;:0.2}}" data-decimals="3" data-region-unavailable="N/A" data-has-valid-price="true">$0.20</span> per Million Executions </td> <td>1 Million Executions</td> </tr> </tbody> </table>
+				</section>
+				<section>
+					<h3>Continuous Integration</h3>
+					<ul>
+						<li>Use Git to push your code, Azure function redeploys</li>
+						<li>No down time</li>
+						<li>Clear log of commits that were deployed</li>
+						<li>Works with Github, any git repo, Bitbucket, Dropbox (?), etc.</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Let's write a function to check the weather! We'll cover:</h4>
+					<ul>
+						<li>Creating a new Azure function and setting up GitHub deployments</li>
+						<li>Executing functions on an HTTP request and returning JSON</li>
+						<li>Passing in parameters to Azure functions</li>
+						<li>Logging and debugging</li>
+						<li>Calling other Azure functions</li>
+						<li>Storing secrets with process variables</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Watch out for:</h4>
+					<ul>
+						<li>Can't rename functions in web UI after creating them</li>
+						<li>Wierd behavior if you enable and then disable source from CI</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Resources</h4>
+					<ul>
+						<li>Slides and code are at <a>github.com/dan-silver</a></li>
+						<li><code>npm i -g azure-functions-cli</code></li>
+						<li><a>https://azure.microsoft.com/en-us/services/functions/</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
