@@ -49,13 +49,13 @@
 						<li>Decrease costs</li>
 						<li>Don't need to worry about underlying server architecture</li>
 						<li>Isolate app modules</li>
-						<li>Code in Node and use the resources of the node ecosystem!</li>
+						<li>Code in Node.js and use the resources of the ecosystem!</li>
 					</ul>
 				</section>
 				<section>
 					<h3>Local Development Strategy</h3>
 					<ul>
-						<li><a href="https://www.npmjs.com/package/azure-functions-cli">Azure Functions Client*</a> - simulates behavior in production</li>
+						<li><a target="_blank" href="https://www.npmjs.com/package/azure-functions-cli">Azure Functions Client*</a> - simulates behavior in production</li>
 						<code>npm i -g azure-functions-cli</code>
 						<li>Don't need authentication (code query parameter)</li>
 						<li>Use <code>func host start</code> to start functions server</li>
@@ -71,7 +71,8 @@
 				</section>
 				<section>
 					<h5>Cost as of 3/14/2017</h5>
-					<table <tr> <th>Meter</th> <th>Price</th> <th>Free Grant (Per Month)</th> </tr> </thead> <tbody> <tr> <td>Execution Time*</td> <td> <span class="price-data " data-amount="{&quot;regional&quot;:{&quot;asia-pacific-east&quot;:0.000016,&quot;asia-pacific-southeast&quot;:0.000016,&quot;australia-east&quot;:0.000016,&quot;australia-southeast&quot;:0.000016,&quot;brazil-south&quot;:0.000016,&quot;canada-central&quot;:0.000016,&quot;europe-north&quot;:0.000016,&quot;europe-west&quot;:0.000016,&quot;japan-east&quot;:0.000016,&quot;japan-west&quot;:0.000016,&quot;south-india&quot;:0.000016,&quot;united-kingdom-south&quot;:0.000016,&quot;us-central&quot;:0.000016,&quot;us-east-2&quot;:0.000016,&quot;us-north-central&quot;:0.000016,&quot;us-south-central&quot;:0.000016,&quot;us-west&quot;:0.000016,&quot;us-west-2&quot;:0.000016}}" data-decimals="6" data-region-unavailable="N/A" data-has-valid-price="true">$0.000016</span>/GB-s </td> <td>400,000 GB-s</td> </tr> <tr> <td>Total Executions*</td> <td> <span class="price-data " data-amount="{&quot;regional&quot;:{&quot;asia-pacific-east&quot;:0.2,&quot;asia-pacific-southeast&quot;:0.2,&quot;australia-east&quot;:0.2,&quot;australia-southeast&quot;:0.2,&quot;brazil-south&quot;:0.2,&quot;canada-central&quot;:0.2,&quot;europe-north&quot;:0.2,&quot;europe-west&quot;:0.2,&quot;japan-east&quot;:0.2,&quot;japan-west&quot;:0.2,&quot;south-india&quot;:0.2,&quot;united-kingdom-south&quot;:0.2,&quot;us-central&quot;:0.2,&quot;us-east-2&quot;:0.2,&quot;us-north-central&quot;:0.2,&quot;us-south-central&quot;:0.2,&quot;us-west&quot;:0.2,&quot;us-west-2&quot;:0.2}}" data-decimals="3" data-region-unavailable="N/A" data-has-valid-price="true">$0.20</span> per Million Executions </td> <td>1 Million Executions</td> </tr> </tbody> </table>
+					<table <tr> <th>Meter</th> <th>Price</th> <th>Free Grant (Per Month)</th> </tr> </thead> <tbody> <tr> <td>Execution Time*</td> <td> <span>$0.000016</span>/GB-s </td> <td>400,000 GB-s</td> </tr> <tr> <td>Total Executions*</td> <td> <span>$0.20</span> per Million Executions </td> <td>1 Million Executions</td> </tr> </tbody> </table>
+					<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/functions/">https://azure.microsoft.com/en-us/pricing/details/functions/</a>
 				</section>
 				<section>
 					<h3>Continuous Integration</h3>
@@ -94,18 +95,21 @@
 					</ul>
 				</section>
 				<section>
-					<h4>Watch out for:</h4>
+					<h4>Tips and what to watch out for</h4>
 					<ul>
 						<li>Can't rename functions in web UI after creating them</li>
 						<li>Wierd behavior if you enable and then disable source from CI</li>
+						<li>Turn on server logging right away, it's disabled by default!</li>
+						<li>Make sure appsettings.json is in your .gitignore so you don't have to reset your keys</li>
 					</ul>
 				</section>
 				<section>
 					<h4>Resources</h4>
 					<ul>
-						<li>Slides and code are at <a>github.com/dan-silver/azure-functions-presentation</a></li>
+						<li>Starter project is at <a href="https://github.com/dan-silver/azure-function-soccer-day-starter" target="_blank">https://github.com/dan-silver/azure-function-soccer-day-starter</a>
+						<li>Slides and code are at <a target="_blank" href="https://github.com/dan-silver/azure-functions-presentation" >github.com/dan-silver/azure-functions-presentation</a></li>
 						<li><code>npm i -g azure-functions-cli</code></li>
-						<li><a>https://azure.microsoft.com/en-us/services/functions/</a></li>
+						<li><a href="https://azure.microsoft.com/en-us/services/functions/" target="_blank" >https://azure.microsoft.com/en-us/services/functions/</a></li>
 					</ul>
 				</section>
 			</div>
